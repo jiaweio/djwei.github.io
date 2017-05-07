@@ -26,7 +26,9 @@
 <meta property="og:image" content="http://yoursite.com/Users/dongjiawei/Downloads/Hexo/img/屏幕快照 2017-05-07 下午3.13.31.png">
 <meta property="og:image" content="http://yoursite.com/Users/dongjiawei/Downloads/Hexo/img/屏幕快照 2017-05-07 下午3.17.35.png">
 <meta property="og:image" content="http://yoursite.com/Users/dongjiawei/Downloads/Hexo/img/屏幕快照 2017-05-07 下午3.19.47.png">
-<meta property="og:updated_time" content="2017-05-07T07:22:19.000Z">
+<meta property="og:image" content="http://yoursite.com/Users/dongjiawei/Downloads/Hexo/img/屏幕快照 2017-05-07 下午3.51.50.png">
+<meta property="og:image" content="http://yoursite.com/Users/dongjiawei/Downloads/Hexo/img/屏幕快照 2017-05-07 下午4.00.30.png">
+<meta property="og:updated_time" content="2017-05-07T08:45:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github+Hexo 搭建属于自己的Blog">
 <meta name="twitter:description" content="​    # 晴空万里  On Sunday
@@ -216,6 +218,64 @@
 <p> 配置个人信息:<img src="/Users/dongjiawei/Downloads/Hexo/img/屏幕快照 2017-05-07 下午3.19.47.png" alt="屏幕快照 2017-05-07 下午3.19.47"></p>
 <p>​      <strong>使用Github 建立博客</strong></p>
 <p>登录github首页面,点击页面右下角的 New Repository</p>
+<p>Repository name:  userName.github.io (userName是你的用户名 一定要小写)</p>
+<p>Description(optional):  Writing 1000 Words a Day Changed My Life —描述</p>
+<p>Github Pages Repository 名字和Github账号要保持一致(一定要遵循username.github.io)格式        点击Create Repository  完成创建</p>
+<p>​      <strong>安装Hexo</strong></p>
+<p>现在任意一个盘新建一个 Hexo 文件夹,gitbash 窗口输入命令:</p>
+<p>$  npm install  hexo-cli  -g </p>
+<p>注意Mac 系统输入:</p>
+<p>$  sudo npm  install hexo-cli -g</p>
+<p>1)、进入Hexo目录下   </p>
+<p>$ cd D:/Hexo (这里的D盘是你Hexo文件夹所在的位置,Mac 系统输入:cd 直接将所在文件夹拖入窗口,回车即可)</p>
+<p>运行如下命令:</p>
+<p>$ hexo init</p>
+<p>$ hexo g (生成)</p>
+<p>$ hexo s(启动本地预览 复制窗口提示的命令粘贴到浏览器一个初始化的博客就生成了   键盘Ctrl+C 停止本地预览)  第一阶段完成了。</p>
+<p>​     <strong>更换博客主题</strong></p>
+<p><img src="/Users/dongjiawei/Downloads/Hexo/img/屏幕快照 2017-05-07 下午3.51.50.png" alt="屏幕快照 2017-05-07 下午3.51.50"></p>
+<p>如何不喜欢后期可以自己去搜索有很多;</p>
+<p>修改Hexo目录下的config.yml配置文件中的theme属性,设置为jacman,timezone属性配置不能错 可以配置成 timezone: Asia/Beijing(属性后面一定要有空格,有空格 ,有空格 重要的事情说三遍)</p>
+<p>进入theme文件夹下输入</p>
+<p>$ cd themes/jacman</p>
+<p>$ git pull</p>
+<p>$ hexo clean</p>
+<p>$ hexo g</p>
+<p>$ hexo s</p>
+<p>复制地址到浏览器查看有没有成功替换主题(一定要 hexo clean再hexo g)</p>
+<p>你也可以先备份_config.yml文件在替换</p>
+<p>现在可以新建文章和页面:<img src="/Users/dongjiawei/Downloads/Hexo/img/屏幕快照 2017-05-07 下午4.00.30.png" alt="屏幕快照 2017-05-07 下午4.00.30"> </p>
+<p>1)、生成的文章会存在于Hexo\sourse_posts目录下</p>
+<p>2)、文章默认.md格式(Markdown语法)可以搜索了解一下,先下载Markdown编辑器</p>
+<p>Typora(这是其中的一款)简洁明了 先随便写点内容Ctrl+s 保存</p>
+<p>输入命令：</p>
+<p>退回到Hexo文件夹下</p>
+<p>$ cd ..</p>
+<p>$ hexo g</p>
+<p>$ hexo s</p>
+<p>复制地址到浏览器查看一下效果 就可以看到刚才写的内容</p>
+<p>​    <strong>安装hexo-deployer-git</strong></p>
+<p> $ npm install  hexo-deployer-git  —save</p>
+<p> _config.yml 中配置deploy</p>
+<p> deploy:</p>
+<p>​      type: git</p>
+<p>​      repo: <a href="https://github.com/username/username.github.io(这里可以复制github的" target="_blank" rel="external">https://github.com/username/username.github.io(这里可以复制github的</a>)</p>
+<p>​      branch: master</p>
+<p>master为分支,可以不配置repo为仓库地址,在github上新建仓库后,可以复制此地址</p>
+<p>​     <strong>部署</strong></p>
+<p>$ hexo d g  命令  </p>
+<p>提示: INFO  Deploy done: git 那就成功了</p>
+<p>这时候在浏览器输入你的博客地址就可以查看了</p>
+<p>注意如果提示</p>
+<p>{ Error: Cannot find module ‘./build/Release/DTraceProviderBindings’</p>
+<pre><code>at Function.Module._resolveFilename (module.js:469:15)
+at Function.Module._load (module.js:417:25)
+at Module.require (module.js:497:17)
+at require (internal/module.js:20:19)
+at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/hexo/node_modules/dtrace-
+</code></pre><p>等错误可以忽略  如果没有成功这里有关于搭建中出现的错误解决方法:</p>
+<p><a href="https://www.zhihu.com/question/38219432" target="_blank" rel="external">https://www.zhihu.com/question/38219432</a> </p>
+<p>希望本文可以帮助后者成功搭建自己的博客 欢迎star 如有问题可以直接提Issues,或者发邮件致我,我会尽快回复。希望大家能坚持自己所做的事,共勉。</p>
 
       
 
